@@ -1,39 +1,89 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-cyan: var(--accent-cyan);
+  
+  --color-toast-bg: var(--toast-bg);
+  --color-toast-border: var(--toast-border);
+  --color-toast-color: var(--toast-color);
+  
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+}
+
+:root {
+  /* Light Mode */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.1);
+  
+  --accent-purple: #9333ea;
+  --accent-pink: #db2777;
+  --accent-cyan: #0891b2;
+  
+  --toast-bg: rgba(255, 255, 255, 0.8);
+  --toast-border: rgba(0, 0, 0, 0.1);
+  --toast-color: #0f172a;
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  /* Dark Mode */
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+  
+  --accent-purple: #a855f7;
+  --accent-pink: #ec4899;
+  --accent-cyan: #06b6d4;
+  
+  --toast-bg: rgba(255, 255, 255, 0.1);
+  --toast-border: rgba(255, 255, 255, 0.2);
+  --toast-color: #fff;
+  
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Scrollbar */
 @layer base {
-  :root {
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --accent-purple: #a855f7;
-    --accent-pink: #ec4899;
-    --accent-cyan: #06b6d4;
-  }
-
   body {
-    @apply antialiased;
+    @apply antialiased bg-background text-foreground;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gray-900;
+    @apply bg-transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-purple-600 to-pink-600 rounded-full;
+    @apply bg-gradient-to-b from-purple-500 to-pink-500 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply from-purple-700 to-pink-700;
+    @apply from-purple-600 to-pink-600;
   }
 }
 
 @layer utilities {
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10;
+    @apply backdrop-blur-lg bg-card-bg border border-card-border;
   }
 
   .text-gradient {

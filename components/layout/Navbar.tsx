@@ -13,6 +13,7 @@ import { useCartStore } from '@/store/cartStore';
 import CartDrawer from './CartDrawer';
 import GlassCard from '../ui/GlassCard';
 import Link from 'next/link';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 const categories = [
   { id: 'electronics', name: 'Electronics', icon: '💻' },
@@ -97,7 +98,9 @@ export default function Navbar() {
             </div>
 
             {/* Right Side */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <ThemeToggle />
+              
               <button className="p-2 rounded-full hover:bg-white/10 transition-colors">
                 <User size={22} />
               </button>

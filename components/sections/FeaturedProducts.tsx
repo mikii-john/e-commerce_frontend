@@ -54,7 +54,7 @@ export default function FeaturedProducts() {
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Featured Collection
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Explore our most popular items, handpicked for their exceptional design and quality.
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ export default function FeaturedProducts() {
               transition={{ delay: index * 0.1 }}
             >
               <GlassCard className="h-full p-4 group">
-                <div className="relative aspect-square mb-4 rounded-xl overflow-hidden bg-gray-800/50">
+                <div className="relative aspect-square mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800/50">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -85,18 +85,18 @@ export default function FeaturedProducts() {
 
                 <div className="space-y-2">
                   <div className="flex justify-between items-start">
-                    <h3 className="font-semibold text-lg line-clamp-1">{product.name}</h3>
-                    <div className="flex items-center space-x-1 text-yellow-400 text-sm">
+                    <h3 className="font-semibold text-lg line-clamp-1 text-gray-900 dark:text-white">{product.name}</h3>
+                    <div className="flex items-center space-x-1 text-yellow-500 dark:text-yellow-400 text-sm">
                       <Star size={14} fill="currentColor" />
                       <span>{product.rating}</span>
                     </div>
                   </div>
                   
-                  <div className="flex justify-between items-center pt-2 border-t border-white/10">
-                    <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                  <div className="flex justify-between items-center pt-2 border-t border-gray-200 dark:border-white/10">
+                    <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
                       ${product.price}
                     </span>
-                    <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                    <button className="p-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors text-gray-900 dark:text-white">
                       <ArrowRight size={18} />
                     </button>
                   </div>

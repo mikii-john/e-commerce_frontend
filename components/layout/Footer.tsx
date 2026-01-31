@@ -12,15 +12,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative mt-20 border-t border-white/10 bg-black/20 backdrop-blur-xl">
+    <footer className="relative mt-20 border-t border-gray-200 dark:border-white/10 bg-white/50 dark:bg-black/20 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               LuxeShop
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               Experience the future of premium shopping. We bring you curated luxury items with exceptional quality and design.
             </p>
             <div className="flex space-x-4">
@@ -29,7 +29,7 @@ export default function Footer() {
                   key={i}
                   href="#"
                   whileHover={{ scale: 1.1, color: '#d8b4fe' }}
-                  className="text-gray-400 transition-colors"
+                  className="text-gray-500 dark:text-gray-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
                 >
                   <Icon size={20} />
                 </motion.a>
@@ -40,11 +40,11 @@ export default function Footer() {
           {/* Links Columns */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title}>
-              <h3 className="text-white font-semibold mb-4 capitalize">{title}</h3>
+              <h3 className="text-gray-900 dark:text-white font-semibold mb-4 capitalize">{title}</h3>
               <ul className="space-y-2">
                 {items.map((item) => (
                   <li key={item}>
-                    <Link href="#" className="text-gray-400 text-sm hover:text-purple-400 transition-colors">
+                    <Link href="#" className="text-gray-600 dark:text-gray-400 text-sm hover:text-purple-500 dark:hover:text-purple-400 transition-colors">
                       {item}
                     </Link>
                   </li>
@@ -59,12 +59,12 @@ export default function Footer() {
           </div> */}
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
           <p>© {new Date().getFullYear()} LuxeShop. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-gray-300">Terms</Link>
-            <Link href="#" className="hover:text-gray-300">Privacy</Link>
-            <Link href="#" className="hover:text-gray-300">Cookies</Link>
+            <Link href="#" className="hover:text-gray-900 dark:hover:text-gray-300">Terms</Link>
+            <Link href="#" className="hover:text-gray-900 dark:hover:text-gray-300">Privacy</Link>
+            <Link href="#" className="hover:text-gray-900 dark:hover:text-gray-300">Cookies</Link>
           </div>
         </div>
       </div>
